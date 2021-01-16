@@ -1,0 +1,79 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+Contacto
+{% endblock %}
+
+
+{% block content  %}
+<div class="container space-2 space-3--lg">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-60 text-center mx-md-auto mb-9">
+        <span class=" alert alert-primary  mb-3">Deja un Mensaje</span>
+        <h2 class="title-padding h3">Te queremos escuchar!!</h2>
+        <p>Tienes alguna preguta?, quieres hablar con nosotros?, contactanos!.</p>
+      </div>
+      <!-- End Title -->
+
+      <div class="w-lg-80 mx-auto">
+        <form class="js-validate" novalidate="novalidate">
+          <div class="row">
+            <!-- Input -->
+            <div class="col-sm-6 mb-6">
+              <div class="form-message">
+                <div class="input-group ">
+                  <input class="form-control " type="text" name="name" required="" placeholder="Tu Nombre" aria-label="Your name" data-msg="Por favor escribe tu nombre." data-error-class="u-has-error" data-success-class="u-has-success">
+                </div>
+              </div>
+            </div>
+            <!-- End Input -->
+
+            <!-- Input -->
+            <div class="col-sm-6 mb-6">
+              <div class="form-message">
+                <div class="input-group ">
+                  <input class="form-control " type="email" name="email" required="" placeholder="Tu correo electronico" aria-label="Your email address" data-msg="Escribe tu correo electronico." data-error-class="u-has-error" data-success-class="u-has-success">
+                </div>
+              </div>
+            </div>
+            <!-- End Input -->
+
+            <div class="w-100"></div>
+
+            <!-- Input -->
+            <div class="col-sm-6 mb-6">
+              <div class="form-message">
+                <div class="input-group ">
+                  <input class="form-control " type="text" name="subject" required="" placeholder="Tema" aria-label="Subject" data-msg="Por favor escribe un tema." data-error-class="u-has-error" data-success-class="u-has-success">
+                </div>
+              </div>
+            </div>
+            <!-- End Input -->
+
+            <!-- Input -->
+            <div class="col-sm-6 mb-6">
+              <div class="form-message">
+                <div class=" input-group ">
+                  <input class="form-control " type="number" name="phone" required="" placeholder="Tu Telefono" aria-label="Your phone number" data-msg="Por favor escribe tu telefono." data-error-class="u-has-error" data-success-class="u-has-success">
+                </div>
+              </div>
+            </div>
+            <!-- End Input -->
+          </div>
+
+          <!-- Input -->
+          <div class="js-form-message mb-9">
+            <div class="input-group form">
+              <textarea class="form-control " rows="6" name="text" required="" placeholder="Como te podemos ayudar?" aria-label="How can we help you?" data-msg="Por favor escribe el motivo de tu mensaje." data-error-class="u-has-error" data-success-class="u-has-success"></textarea>
+            </div>
+          </div>
+          <!-- End Input -->
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-wide mb-4">Enviar</button>
+            <p class="small">Te daremos respuesta lo mas pronto posible.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+{% endblock  %}

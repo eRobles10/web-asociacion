@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}}
+{% load static %}
+{% block title %}
+<h2>Beneficios</h2>
+{% endblock %}
+
+{% block content  %}
+ <!-- events section start -->
+      <main class="events_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="news_taital">Beneficios</h1>
+                  <p class="news_text">Si te interesa ser parte de la organizacion, estos son algunos de los beneficios que ofrecemos. </p>
+               </div>
+            </div>
+            {% for benefit in benefits %}
+            <div class="events_section_2">
+               <div class="row">
+                  <div class="col-md-5">
+                     <div class="img_7"><img src="{{benefit.image.url}}" class="img_7"></div>
+                     <div class="date_bt">
+                       {% comment %}
+                           <div class="date_text active"><a href="#">01</a></div>
+                           <div class="date_text"><a href="#">FEB</a></div>
+                       {% endcomment %}
+                     </div>
+                  </div>
+                  <div class="col-md-7">
+                     <h1 class="give_taital_1">{{benefit.title}}</h1>
+                     <p class="ipsum_text_1">{{benefit.content|safe}}</p>
+                     <div class="donate_btn_main">
+                        {% comment %}
+                           <div class="readmore_btn"><a href="#">Ver Más</a></div>
+                        {% endcomment %}
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         {% endfor %}
+      </main>
+      <!-- services section end -->
+{% endblock  %}
