@@ -9,73 +9,43 @@ Inicio
 <!-- banner section start -->
       <div class="banner_section padding_90_top_bottom">
          <div class="container">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">  
                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                {% for post in posts %}
+                  <li data-target="#carouselExampleIndicators" class="{% if forloop.counter0 == 0 %}active{% endif %}" data-slide-to="{{forloop.counter0}}"></li>
+                {% endfor %}
                </ol>
                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                     <div class="row">
-                        <div class="col-sm-12">
-                           <h1 class="banner_taital">Blog Entrada 1</h1>
-                           <p class="banner_text">Suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going </p>
-                           <div class="read_bt"><a href="#">Ver Más</a></div>
+                  {% for post in posts %}
+                     <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <h1 class="banner_taital">{{post.title}}</h1>
+                              <p class="banner_text">{{post.intro}} </p>
+                              <div class="read_bt"><a href="#">Ver Más</a></div>
+                           </div>
                         </div>
                      </div>
-                  </div>
-                  <div class="carousel-item">
-                     <div class="col-sm-12">
-                        <h1 class="banner_taital">Blog Entrada 2</h1>
-                        <p class="banner_text">Suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going </p>
-                        <div class="read_bt"><a href="#">Ver Más</a></div>
-                     </div>
-                  </div>
-                  <div class="carousel-item">
-                     <div class="col-sm-12">
-                        <h1 class="banner_taital">Blog Entrada 3</h1>
-                        <p class="banner_text">Suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going </p>
-                        <div class="read_bt"><a href="#">Ver Más</a></div>
-                     </div>
-                  </div>
-                  <div class="carousel-item">
-                     <div class="col-sm-12">
-                        <h1 class="banner_taital">Blog Entrada 4</h1>
-                        <p class="banner_text">Suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going </p>
-                        <div class="read_bt"><a href="#">Ver Más</a></div>
-                     </div>
-                  </div>
-                  <div class="carousel-item">
-                     <div class="col-sm-12">
-                        <h1 class="banner_taital">Blog Entrada 5</h1>
-                        <p class="banner_text">Suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going </p>
-                        <div class="read_bt"><a href="#">Ver Más</a></div>
-                     </div>
-                  </div>
+                  {% endfor %}
                </div>
             </div>
          </div>
       </div>
       </div>
       <!-- banner section end -->
+       
         <!-- about section start -->
       <div class="about_section layout_padding">
          <div class="container">
             <div class="row">
                <div class="col-sm-8">
                   <h2 class="about_taital">Acerca de...</h2>
-                  <p class="about_text">many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If youmany variations of passages of Lorem Ipsum 
-                     available, but the majority have suffered 
-                     alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you many
-                     variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, byinjected humour, or randomised words which don't look even slightly believable. If you
+                  <p class="about_text">{{about.content}}
                   </p>
                   <div class="readmore_bt"><a href="#">Ver Más</a></div>
                </div>
                <div class="col-sm-4">
-                  <div class="about_img"><img src="{% static 'core/images/about-img.png' %}"></div>
+                  <div class="about_img"><img src="{{about.image.url}}"></div>
                </div>
             </div>
          </div>
@@ -88,20 +58,17 @@ Inicio
             <div class="row">
                <div class="col-sm-12">
                   <h1 class="news_taital">Servicios</h1>
-                  <p class="news_text">La S.C. brinda diferentes servicios los cuales se pueden encontrar en esta seccion </p>
+                  <p class="news_text">La asociación proporciona algunos servicios</p>
                </div>
             </div>
             <div class="news_section_2">
                <div class="row">
                   <div class="col-md-6">
-                     <div class="news_img"><img src="{% static 'core/images/news-img.png' %}"></div>
+                     <div class="news_img"><img src="{{service_intro.image.url}}"></div>
                   </div>
                   <div class="col-md-6">
-                     <h1 class="give_taital">Servicio Uno</h1>
-                     <p class="ipsum_text">variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by<br>
-                        injected humour, or randomised v<br>
-                        ariations of passages of Lorem Ipsum <br>
-                        available, but the majority have suffered alteration in some form, by injected humour, or randomised 
+                     <h1 class="give_taital">{{service_intro.title|safe}}</h1>
+                     <p class="ipsum_text">{{service_intro.content|safe}}   available, but the majority have suffered alteration in some form, by injected humour, or randomised 
                      </p>
                       <div class="donate_btn_main">
                         <div class="readmore_btn"><a href="#">Ver Más</a></div>
@@ -112,27 +79,28 @@ Inicio
          </div>
       </div>
       <!-- news section end -->
+
       <!-- events section start -->
       <div class="events_section layout_padding">
          <div class="container">
             <div class="row">
                <div class="col-sm-12">
                   <h1 class="news_taital">Beneficios</h1>
-                  <p class="news_text">Si ten interesa se prate de la organizacion, estos son algunos de los beneficios que ofrecemos. </p>
+                   <p class="news_text">Si te interesa ser parte de la organizacion, estos son algunos de los beneficios que ofrecemos. </p>
                </div>
             </div>
             <div class="events_section_2">
                <div class="row">
                   <div class="col-md-5">
-                     <div class="img_7"><img src="{% static 'core/images/img-7.png' %}" class="img_7"></div>
+                     <div class="img_7"><img src="{{benefits.image.url}}" class="img_7"></div>
                      <div class="date_bt">
-                        <div class="date_text active"><a href="#">01</a></div>
-                        <div class="date_text"><a href="#">FEB</a></div>
+                        <div class="date_text active"><a href="#">{{benefits.created|date:"d"}}</a></div>
+                        <div class="date_text"><a href="#">{{benefits.created|date:"M"}}</a></div>
                      </div>
                   </div>
                   <div class="col-md-7">
-                     <h1 class="give_taital_1">The Internet tend to repeat</h1>
-                     <p class="ipsum_text_1">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literatureContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
+                     <h1 class="give_taital_1">{{benefits.title}}</h1>
+                     <p class="ipsum_text_1">{{benefits.content}}</p>
                      <div class="donate_btn_main">
                         <div class="readmore_btn"><a href="#">Ver Más</a></div>
                      </div>
@@ -142,6 +110,7 @@ Inicio
          </div>
       </div>
       <!-- services section end -->
+
       <!-- benefits section start -->
       <div class="donate_section layout_padding">
          <div class="container">

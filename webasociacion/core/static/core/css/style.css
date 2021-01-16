@@ -1405,3 +1405,7 @@ input.address_text::placeholder {
 .title-padding {
     padding-top: 50px;
 }
+
+.carousel-inner {
+    min-height: 270px !important;
+}

@@ -114,7 +114,7 @@ Blog
               <!-- Categories List -->
               <ul class="list-unstyled">
                 {% for category in categories %}
-                    <li class="py-1"><a class="text-secondary" href="#">{{category.name}}</a></li>
+                    <li class="py-1"><a class="text-secondary" href="{% url 'category' category.id %}">{{category.name}}</a></li>
                       {% if not forloop.last %}<li class="dropdown-divider"></li>{% endif %}
                 {% endfor %}                          
                 

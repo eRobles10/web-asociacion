@@ -15,7 +15,7 @@ class Benefits(models.Model):
 
     class Meta:
         verbose_name = "Beneficios"
-        verbose_name_plural = "Beneficios"
+        verbose_name_plural = "Beneficio"
         ordering=["order"]
     
     def __str__(self):

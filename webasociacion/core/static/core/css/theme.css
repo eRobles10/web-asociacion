@@ -22558,3 +22558,7 @@ button:focus {
 /*------------------------------------
   File for your custom SCSS style
 ------------------------------------*/
+
+.carousel-item {
+    min-height: 262px !important;
+}
