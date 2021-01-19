@@ -22,7 +22,7 @@ Inicio
                            <div class="col-sm-12">
                               <h1 class="banner_taital">{{post.title}}</h1>
                               <p class="banner_text">{{post.intro}} </p>
-                              <div class="read_bt"><a href="#">Ver Más</a></div>
+                              <div class="read_bt"><a href="{% url 'post' post.id %}">Ver Más</a></div>
                            </div>
                         </div>
                      </div>

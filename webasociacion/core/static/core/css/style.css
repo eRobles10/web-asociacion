@@ -1402,10 +1402,43 @@ input.address_text::placeholder {
     height: 201px !important;
 }
 
+.top-50-padding {
+    padding-top: 50px;
+}
+
 .title-padding {
     padding-top: 50px;
 }
 
 .carousel-inner {
     min-height: 270px !important;
+}
+
+.intropost-section {
+    background-image: url(../images/portfolio-bg.jpg);
+}
+
+.post_title {
+    width: 45%;
+    margin: 0 auto;
+    font-size: 60px;
+    color: rgb(73, 73, 73);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    line-height: 60px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.post_intro {
+    width: 85%;
+    margin: 0 auto;
+    font-size: 16px;
+    color: rgb(73, 73, 73);
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.edit_post {
+    color: rgb(14, 136, 236);
 }

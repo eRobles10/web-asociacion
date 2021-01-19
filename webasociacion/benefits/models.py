@@ -1,11 +1,10 @@
 from django.db import models
-from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 
 # Create your models here.
 class Benefits(models.Model): 
     title  = models.CharField(max_length=200, verbose_name="Titulo")
-    content =  RichTextField(verbose_name="Contenido")
+    content =  models.TextField(verbose_name="Contenido")
     image = models.ImageField(verbose_name="Imagen", upload_to="benefits_bg")
     created = models.DateTimeField(auto_now_add=True,verbose_name="Fecha de creacion")
     updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de edicion")

@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -20,7 +21,7 @@ class Category(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=200, verbose_name="Titulo")
     intro =  models.CharField(max_length=200, verbose_name="Introduccion",blank=True, null=True)
-    content = models.TextField(verbose_name="Contenido")
+    content = RichTextField(verbose_name="Contenido")
     image = models.ImageField(verbose_name="Imagen",upload_to="Posts")
     created = models.DateTimeField(auto_now_add=True,verbose_name="Fecha de creacion")
     updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de edicion")
